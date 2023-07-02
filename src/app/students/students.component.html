@@ -1,1 +1,44 @@
-<p>students works!</p>
+<div class="row">
+    <div class="col-md-12">
+        <h5>{{title_alumnos}}</h5>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover text-center table-dark">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>DNI</th>
+                        <th>1° Parcial</th>
+                        <th>2° Parcial</th>
+                        <th>Final</th>
+                        <th>Aprobado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let usuario of usuarios; let i = index">
+                        <td>{{usuario.nombre | titlecase}}</td>
+                        <td>{{usuario.apellido | titlecase}}</td>
+                        <td>{{usuario.dni}}</td>
+                        <td [ngClass]="usuario.nota_1 > 3 ? 'text-success' : 'text-danger'"><span *ngIf="usuario.nota_1 > 0;else nota_1">{{usuario.nota_1}}</span></td>
+                        <ng-template #nota_1>
+                            <span>{{no_presente}}</span>
+                        </ng-template>
+                        <td [ngClass]="usuario.nota_2 > 3 ? 'text-success' : 'text-danger'"><span *ngIf="usuario.nota_2 > 0;else nota_2">{{usuario.nota_2}}</span></td>
+                        <ng-template #nota_2>
+                            <span>{{no_presente}}</span>
+                        </ng-template>
+                        <td [ngClass]="usuario.nota_final > 3 ? 'text-success' : 'text-danger'"><span *ngIf="usuario.nota_final > 0;else final">{{usuario.nota_2}}</span></td>
+                        <ng-template #final>
+                            <span>{{no_presente}}</span>
+                        </ng-template>
+                        <td [ngClass]="usuario.aprobado ? 'bg-success' : 'bg-danger'"><span *ngIf="usuario.aprobado == true;else desaprobado">Si</span></td>
+                        <ng-template #desaprobado>
+                            <span>No</span>
+                        </ng-template>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+</div>

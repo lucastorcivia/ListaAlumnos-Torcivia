@@ -1,30 +1,23 @@
 <!-- <app-header></app-header> -->
-<app-main-wrapper>
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>TP</title>
-    </head>
-    <body>
-        <app-navbar></app-navbar>
-          
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-2">
-                <app-sidebar></app-sidebar>
-              </div>
-              <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                  <h1 class="h2">Contenido principal</h1>
-                </div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo iaculis nunc, ut convallis mi pretium ac. Integer vel blandit nisl. Praesent eu molestie magna. Maecenas quis ullamcorper nisl. Nullam sit amet enim vel enim hendrerit vestibulum at eget quam. Fusce fermentum posuere purus quis suscipit. Integer id sapien mauris. Donec non felis in ex bibendum ultricies.
-                </p>
-            </main>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Listado de Alumnos</title>
+  </head>
+  <body>
+      <app-navbar></app-navbar>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-2">
+              <app-sidebar></app-sidebar>
             </div>
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+              <app-main></app-main>
+              <app-students></app-students>
+          </main>
           </div>
-    </body>
-  </html>
-</app-main-wrapper>
+        </div>
+  </body>
+</html>
